@@ -1,0 +1,301 @@
+/*css for all*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+h2{
+    margin-bottom: 2%;
+}
+
+.text-center{
+    text-align: center;
+}
+.clear-fix{
+    float: none;
+    clear: both;
+}
+/*css for menu angle tags*/
+
+a{
+    text-decoration: none;
+    color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+
+a:hover{
+    color: brown;
+}
+
+/*css for class containers*/
+
+.container{
+    width: 80%;
+    margin: 0 auto;
+    /* border: 1px solid black; */
+    padding: 1%;
+}
+
+.img-responsive{
+    width: 100%;
+    border-radius: 5%;
+
+}
+/* css for the navbar */
+.navbar{
+    background-color: papayawhip;
+    
+    
+}
+/*css for img logo*/
+
+img{
+    width: 8%;
+    float: left;
+    /* padding-right: 90%; */
+    
+}
+
+/*css for menu*/
+
+.menu{
+    text-align: right;  
+    /* margin-right: 3%; */
+
+}
+
+.menu ul{
+    list-style: none;
+   
+}
+
+.menu ul li{
+    display: inline;
+    padding-left:1%;
+    line-height: 90px;
+    
+    
+}
+/*css for the search section*/
+
+.search{
+    text-align: center;
+    background-image: url(../images/search-bk.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding: 5%;    
+    margin: 1% auto;
+    /* border: 2px solid black; */
+    
+}
+
+.search input[type="search"]{
+    padding: 1%;
+    border-radius: 5px;
+    width: 50%;
+    color: black;
+    border: none;
+    
+    
+}
+
+.btn-primary{
+    padding: 1%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+    background-color: darksalmon;
+    border-radius: 5px;
+    border: none;
+    width: fit-content;
+    cursor: pointer;
+    
+    
+}
+.btn-primary:hover{
+    background-color:burlywood;
+}
+
+/*css for social media handles */
+
+
+.social ul{
+    list-style: none;
+   
+}
+
+.social ul li{
+    display: inline;
+    padding-left:1%;
+    
+}
+
+/*css for the footer */
+.footer{    
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.categories{
+    padding: 4% 0;
+}
+
+.box-3{
+    /* border: 1px solid black; */
+    width: 28%;
+    float: left;
+    margin: 2%;
+    /* height: 100%;  */
+
+}
+
+.float-container{
+    position: relative;
+}
+.float-text{
+    position: absolute;
+    bottom: 30px;
+    left: 40%;
+    color:white;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* css for foods menu section*/
+
+.explore-foods{
+    background-color: darkgray;
+    margin: 3% auto;
+    
+    
+}
+.menu-container{
+   
+    margin: 0 3%;
+}
+
+
+.food-menu{
+    /* border: 1px solid black; */
+    width: 40%;
+    float: left;
+    padding:1%;
+    margin: 2%;
+    border-radius: 1rem;
+    background-color: white;
+}
+
+
+/* css for foods menu img*/
+
+.food-menu-box{
+    padding: 1%;
+    margin: 1% 0;
+    
+} 
+
+.food-menu-img{
+    float: left;
+    width: 40%;
+   
+}
+
+.food-menu-desc{
+    float: left;   
+    margin: 2% 5%;
+    width: 50%;
+
+}
+.food-price{
+    margin: 3% 0;
+}
+
+
+.food-desc{
+    margin: 3% 0;
+}
+
+/* css for food order page */
+.orders-page{
+    background-image: url(../images/order-bk.jpg);
+    background-repeat:no-repeat;
+    background-size: 100%;
+    padding: 3%;
+
+}
+
+.delivery-food-box{
+    width: 90%;
+}
+
+
+
+
+.field-set{
+    width: 30%;
+    margin: 0 auto;
+    padding: 1%;
+    border-radius: 3%;
+}
+
+legend{
+    color: hotpink;
+    margin-left: 3%;
+    
+}
+.order-form{
+    margin-left: 3%;
+    text-align: right;
+    
+}
+.qty-input{
+    margin: 5% 50%;
+    padding: 3% auto;
+    
+}
+
+/* css for delivery form */
+.delivery-form{
+    margin-top: 3%;
+}
+
+.delivery-form input{
+    padding: 1%;
+    width: 80%;
+    border: none;
+    background-color: burlywood;
+
+}
+
+/* css for error messages */
+.success{
+    padding: 1%;
+    color: #2ed573;
+}
+
+.error{
+    padding: 1%;
+    color: red;
+}
+
+/* css for text area */
+textarea{
+    padding: 2%;
+}
+
+
+
+/* css for mobile divices */
+
+@media only screen and (max-width:768px){
+    .logo{
+        float:none;
+        width: 95%;
+        align-content: center;
+    }
+    .menu ul{
+        align-items: center;
+    }
+}
