@@ -132,14 +132,11 @@ table tr td{
     margin: 2%;
 }
 
-input{
-    /* display: block; */
+input{    
     margin: 2% 25%;
-    align-content: center;
+    align-content: start;
     padding: 1%;
-    width: 50%;
-    border-radius: 1rem;
-    
+    width: 50%;    
 }
 /* css for text area */
 textarea{
@@ -176,4 +173,11 @@ background-color: bisque;
     padding: 3%;
 }
 
-
+.add-forms{
+    align-items: start;
+    background-color: #2ed573;
+    padding: 2%;
+}
+.cat-inputs{
+    align-content: start;
+}

@@ -18,7 +18,7 @@ if(isset($_SESSION['order'])){
 <!-- php script to fetch catgory data from the database -->
 
 <section class="categories">
-    <div class="container " >
+    <div class="container" >
         <div class="menu-container">
             <h2 class="text-center">Food Categories</h2>
             <?php
@@ -43,7 +43,7 @@ if(isset($_SESSION['order'])){
 
                         else{
                             ?>
-                            <img src="<?php echo SITEURL;?>images/category/<?php echo $image_name;?>" alt="" class="img-responsive">
+                            <img src="<?php echo SITEURL;?>images/category/<?php echo $image_name;?>" class="img-responsive cat-box-3" >
 
                             <?php
                         }
@@ -71,65 +71,65 @@ if(isset($_SESSION['order'])){
     <div class="container">
 
         <div class="menu-container">
-        <h2 class="text-center">Explore Foods</h2>  
-        <?php 
-        // fetch data from food table
-        $foodsql="SELECT * FROM food_tbl WHERE featured='Yes' AND active='Yes' LIMIT 6";
+            <h2 class="text-center">Explore Foods</h2>  
+            <?php 
+            // fetch data from food table
+            $foodsql="SELECT * FROM food_tbl WHERE featured='Yes' AND active='Yes' LIMIT 6";
 
-        // execute the query
-        $result=mysqli_query($conn,$foodsql);
+            // execute the query
+            $result=mysqli_query($conn,$foodsql);
 
-        // check if data is available
-        if(mysqli_num_rows($result)){
-            // get the data
-            while($row=mysqli_fetch_assoc($result)){
-                $id=$row['id'];
-                $title=$row['title'];
-                $description=$row['descriptions'];
-                $price=$row['price'];
-                $image_name=$row['image_name'];
+            // check if data is available
+            if(mysqli_num_rows($result)){
+                // get the data
+                while($row=mysqli_fetch_assoc($result)){
+                    $id=$row['id'];
+                    $title=$row['title'];
+                    $description=$row['descriptions'];
+                    $price=$row['price'];
+                    $image_name=$row['image_name'];
 
-                ?>
-                <div class="food-menu">
-                    <div class="food-menu-box">
-                        <div class="">
-                            <?php
-                            if($image_name==""){
-                                echo "<div class='error'>Image not available</div>";
-                            }
-
-                            else{
-                                ?>
-                                <img src="<?php echo SITEURL;?>images/food/<?php echo $image_name; ?>" alt="" class="food-menu-img  img-responsive">
+                    ?>
+                    <div class="food-menu">
+                        <div class="food-menu-box">
+                            <div class="">
                                 <?php
-                            }
-                            ?>
-                            
-                        </div>
-                            <div class="food-menu-desc">
-                                <p class="food-desc"><?php echo $title; ?></p>
-                                <p class="food-price">ksh <?php echo $price; ?></p>
-                                <p class="food-desc"><?php echo $description; ?></p>                   
-                                <a href="<?php echo SITEURL;?>order.php?food_id=<?php echo $id?>" class="btn btn-primary" >Order Now</a>
+                                if($image_name==""){
+                                    echo "<div class='error'>Image not available</div>";
+                                }
+
+                                else{
+                                    ?>
+                                    <img src="<?php echo SITEURL;?>images/food/<?php echo $image_name; ?>" alt="" class="food-menu-img  img-responsive">
+                                    <?php
+                                }
+                                ?>
+                                
                             </div>
-               
+                                <div class="food-menu-desc">
+                                    <p class="food-desc"><?php echo $title; ?></p>
+                                    <p class="food-price">ksh <?php echo $price; ?></p>
+                                    <p class="food-desc"><?php echo $description; ?></p>                   
+                                    <a href="<?php echo SITEURL;?>order.php?food_id=<?php echo $id?>" class="btn btn-primary" >Order Now</a>
+                                </div>
+                
+                        </div>
                     </div>
-                </div>
 
-                <?php
+                    <?php
+                }
+
             }
-
-        }
-        else{
-            // food not available
-            echo "<div class='error'>Food is not availlable</div>";
-        }
-        
-        ?>  
-        
-        
-        <div class="clear-fix"></div>
-    </div>
+            else{
+                // food not available
+                echo "<div class='error'>Food is not availlable</div>";
+            }
+            
+            ?>  
+            
+            
+            <div class="clear-fix"></div>
+        </div>
     </div>
           
     

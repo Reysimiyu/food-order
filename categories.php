@@ -37,7 +37,7 @@
 
                         else{
                             ?>
-                                <img src="<?php echo SITEURL;?>images/category/<?php echo $image_name; ?>" alt="" class="img-responsive">
+                                <img src="<?php echo SITEURL;?>images/category/<?php echo $image_name; ?>" class="img-responsive cat-box-3">
                                 
                             <?php
                         }

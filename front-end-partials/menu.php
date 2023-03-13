@@ -18,7 +18,7 @@ include 'config/db-connect.php';
 <section class="navbar">
     <div class="container">
         <div class="logo">
-          <a href="<?php echo SITEURL;?>"> <img src="images/web-logo.jpg" alt="logo"></a> 
+          <a href="<?php echo SITEURL;?>"> <img src="images/web-logo.jpg" alt="logo" class="logo-img"></a> 
         </div>
         <div class="menu">
             <ul>
