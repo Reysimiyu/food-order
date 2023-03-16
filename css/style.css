@@ -83,10 +83,12 @@ a:hover{
     
 }
 /*css for the search section*/
-
+::placeholder{
+    color: black;
+}
 .search{
     text-align: center;
-    background-image: url(../images/search-bk.jpg);
+    background-image: url(../images/order-bk.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
     padding: 5%;    
@@ -101,6 +103,7 @@ a:hover{
     width: 50%;
     color: black;
     border: none;
+    background-color:rgb(216, 182, 182);
     
     
 }
