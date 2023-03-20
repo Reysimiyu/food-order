@@ -22,7 +22,7 @@ include 'config/db-connect.php';
         }
         ?><br>
             Title
-            <input type="text" name="title" class="cat-inputs">
+            <input type="text" name="title" class="cat-inputs" required>
             Image
             <input type="file" name="img-name" class="cat-inputs">
 

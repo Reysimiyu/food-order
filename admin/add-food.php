@@ -24,7 +24,7 @@
     }
     ?><br>
         <label for="Title" >Title</label>
-        <input type="text" name="title"><br>
+        <input type="text" name="title" required><br>
         <label for="cat_id">Category</label>
         <select name="category" >
         <!-- php script to categories from database -->
@@ -68,7 +68,7 @@
         <label for="description" >Description</label>
         <textarea type="text" name="description"></textarea><br><br>
         <label for="price">Price</label>
-        <input type="number" name="price">
+        <input type="number" name="price" required>
        
         
         

@@ -33,9 +33,9 @@
         }
         ?>
         <label for="New Password" >New Password</label>
-        <input type="password" name="new-password">
+        <input type="password" name="new-password" required>
         <label for="confirm-password">Confirm new password</label>
-        <input type="password" name="confirm-password">
+        <input type="password" name="confirm-password" required>
         <?php
          if(isset($_SESSION['pwd-change'])){
             echo $_SESSION['pwd-change'];

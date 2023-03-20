@@ -35,9 +35,9 @@ include '../config/db-connect.php'
 
     ?><br>       
         <label for="username" >Username</label>
-        <input type="text" name="username">   
+        <input type="text" name="username" required>   
         <label for="password">Password</label>
-        <input type="password" name="password">
+        <input type="password" name="password" required>
 
         <input type="submit" name="submit" value="Login" class="btn-secondary btn-add-admin">
         <br>

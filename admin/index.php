@@ -48,7 +48,7 @@
         </div>
         </a>
 
-        <a href="<?php echo SITEURL;?>admin/manage-food.php">  
+        <a href="<?php echo SITEURL;?>admin/manage-order.php">  
         <div class="col-4 center-text">
             <?php
             // sql query to fetch data from order table

@@ -27,6 +27,12 @@ if(isset($_GET['food_id'])){
 }
 ?>
 
+<?php 
+if(isset($_SESSION['empty-fields'])){
+    echo $_SESSION['empty-fields'];
+    unset($_SESSION['empty-fields']);
+}
+?>
 <div class="orders-page">
     
 <form action="" method="POST">
@@ -59,7 +65,7 @@ if(isset($_GET['food_id'])){
                         <p class="food-price">ksh <?php echo $price;?></p>
                         <input type="hidden" name="price" value="<?php echo $price;?>">
                         <p class="food-desc">Quantinty</p>
-                        <input type="number" name="qty" class="food-price"><br>             
+                        <input type="number" name="qty" class="food-price" required><br>             
                     
                     </div>
                     <div class="clear-fix"></div>
@@ -75,14 +81,14 @@ if(isset($_GET['food_id'])){
         <fieldset class="field-set">
             <legend>Delivery details</legend>    
             Full Name <br>
-            <input type="text" name="full_name" ><br><br>
+            <input type="text" name="full_name" required ><br><br>
             Phone Number<br>
-            <input type="tel" name="contact" ><br><br>
+            <input type="tel" name="contact" required ><br><br>
             Email<br>
-            <input type="email" name="client_email" ><br><br>
+            <input type="email" name="client_email" required><br><br>
             Address<br>
-            <textarea name="client-address" id="" cols="30" rows="5"></textarea><br><br>
-            <input type="submit"  name="submit" value="Confirm Order" class="btn btn-primary">
+            <textarea name="client-address" id="" cols="30" rows="5" required></textarea><br><br>
+            <input type="submit"  name="submit" value="Confirm Order" class="btn btn-primary" required>
         </fieldset>
     </div>
 </form> 
@@ -105,26 +111,36 @@ if(isset($_POST['submit'])) {
     $customer_email=$_POST['client_email'];
     $customer_address=$_POST['client-address'];
 
-//    insert data into the database
-    $sql="INSERT INTO order_tbl ( food, price, quantity, total, 
-    order_date, order_status, customer_name, customer_contact, customer_email, customer_address)
-    VALUES ( '$title', $price, $quantity, $total, '$order_date', '$status', 
-    '$customer_name', '$customer_contact', '$customer_email', '$customer_address')";
-
-    // execute the query
-    $results=mysqli_query($conn,$sql);
-    // check if the query is executed successiful or not
-    if($results==true){
-        $_SESSION['order']="<div class='success text-center'>Your order has been submitted successfully.</div>";
+    //    insert data into the database
+    if(empty($customer_name)||empty($customer_contact)||empty($customer_email)||empty($customer_address)){
+        $_SESSION['empty-fields']="<div class='error text-center''>Fill out all form filds.</div>";
         // redirect to homepage
-        header("location:".SITEURL);
+        header("location:".SITEURL.'order.php');
+
     }
     else{
-        $_SESSION['order']="<div class='error text-center'>Failed top place the order.</div>";
-        // redirect to homepage
-        header("location:".SITEURL);
+        $sql="INSERT INTO order_tbl ( food, price, quantity, total, 
+        order_date, order_status, customer_name, customer_contact, customer_email, customer_address)
+        VALUES ( '$title', $price, $quantity, $total, '$order_date', '$status', 
+        '$customer_name', '$customer_contact', '$customer_email', '$customer_address')";
+
+        // execute the query
+        $results=mysqli_query($conn,$sql);
+        // check if the query is executed successiful or not
+        if($results==true){
+            $_SESSION['order']="<div class='success text-center'>Your order has been submitted successfully.</div>";
+            // redirect to homepage
+            header("location:".SITEURL);
+        }
+        else{
+            $_SESSION['order']="<div class='error text-center'>Failed top place the order.</div>";
+            // redirect to homepage
+            header("location:".SITEURL);
+        }    
+
     }    
-}
+}   
+
 
 
 ?>
